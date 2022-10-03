@@ -3,7 +3,7 @@
 // Description: Add two integer. Testing uploading class onto GitHub
 
 class AddTwoInt{
-	private int answer;
+
 	public static int add(int a, int b)
 	{
 		return a+b;
@@ -17,6 +17,8 @@ class AddTwoInt{
 		int a = Integer.parseInt(args[0]);
 		int b = Integer.parseInt(args[1]);
 		
-		System.out.println(AddTwoInt.add(a, b));
+		System.out.println(add(a, b));
+
+
 	}
 }
