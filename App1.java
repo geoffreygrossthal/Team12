@@ -1,6 +1,5 @@
 
 
-
 import java.io.IOException;
 
 import javafx.application.Application;
@@ -19,12 +18,16 @@ public class App1 extends Application {
         
   
   Parent root;
-  try {
-    root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
-} catch (IOException e) {
-
-}
+    try {
+         root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
+         Scene scene = new Scene(root);
+  
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    } catch (IOException e) {
     }
+}
  
  public static void main(String[] args) {
         launch(args);
