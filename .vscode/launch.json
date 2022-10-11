@@ -6,16 +6,18 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch hello",
+            "name": "Launch App",
             "request": "launch",
-            "mainClass": "hello",
-            "projectName": "Team12_4f376e8e"
+            "mainClass": "App",
+            "projectName": "Team12_6cfe457f"
         },
         {
             "type": "java",
-            "name": "Launch Current File",
+            "name": "Launch App1",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "App1",
+            "projectName": "Team12_6cfe457f",
+            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
