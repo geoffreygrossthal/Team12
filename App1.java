@@ -22,7 +22,7 @@ public class App1 extends Application {
          root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
          Scene scene = new Scene(root);
   
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Sun Devil Pizza");
         primaryStage.setScene(scene);
         primaryStage.show();
     } catch (IOException e) {
