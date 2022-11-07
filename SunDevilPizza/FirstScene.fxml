@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstSceneController">
+   <children>
+      <Button layoutX="210.0" layoutY="221.0" mnemonicParsing="false" onAction="#goToPizzaSelection" prefHeight="45.0" prefWidth="159.0" text="Order Pizza" textFill="#e42323" />
+      <Button layoutX="210.0" layoutY="285.0" mnemonicParsing="false" onAction="#goToEmployeeLogin" prefHeight="45.0" prefWidth="159.0" text="Employee Login" textFill="#d71b1b" />
+      <Label layoutX="252.0" layoutY="31.0" text="SunDevil Pizza" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="252.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asuLogo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

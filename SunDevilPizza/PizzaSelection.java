@@ -1,3 +1,4 @@
+package SunDevilPizza;
 
 
 import java.io.IOException;
@@ -12,24 +13,25 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
  
-public class App1 extends Application {
-    @Override
-    public void start(Stage primaryStage) {
+public class PizzaSelection extends Application {
+
+   @Override
+   public void start(Stage primaryStage) {
         
   
-  Parent root;
-    try {
+   Parent root;
+      try {
          root = FXMLLoader.load(getClass().getResource("MainScene.fxml"));
          Scene scene = new Scene(root);
   
-        primaryStage.setTitle("Sun Devil Pizza");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-    } catch (IOException e) {
-    }
-}
+         primaryStage.setTitle("Sun Devil Pizza");
+         primaryStage.setScene(scene);
+         primaryStage.show();
+      } catch (IOException e) {
+      }
+   }
  
- public static void main(String[] args) {
+   public static void main(String[] args) {
         launch(args);
-    }
+   }
 }

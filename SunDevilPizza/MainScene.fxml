@@ -28,7 +28,7 @@
       </Label>
       <ImageView fitHeight="119.0" fitWidth="54.0" layoutX="256.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@download.jpg" />
+            <Image url="@asuLogo.jpg" />
          </image>
       </ImageView>
       <Label layoutX="268.0" layoutY="368.0" text="Thannk You!" textFill="#827979" />

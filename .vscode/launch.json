@@ -6,26 +6,18 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch App",
+            "name": "Launch PizzaSelection",
             "request": "launch",
-            "mainClass": "App",
+            "mainClass": "SunDevilPizza.PizzaSelection",
             "projectName": "Team12_6cfe457f"
         },
         {
             "type": "java",
-            "name": "Launch App1",
+            "name": "Launch PizzaSelection",
             "request": "launch",
-            "mainClass": "App1",
+            "mainClass": "PizzaSelection",
             "projectName": "Team12_6cfe457f",
-            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
-        },
-        {
-            "type": "java",
-            "name": "Launch App",
-            "request": "launch",
-            "mainClass": "App",
-            "projectName": "Team12_4f376e8e",
-            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/Team12/SunDevilPizza\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
