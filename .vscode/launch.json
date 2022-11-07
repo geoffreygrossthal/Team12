@@ -6,10 +6,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch PizzaSelection",
+            "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "SunDevilPizza.PizzaSelection",
-            "projectName": "Team12_6cfe457f"
+            "mainClass": "${file}"
         },
         {
             "type": "java",
@@ -17,7 +16,7 @@
             "request": "launch",
             "mainClass": "PizzaSelection",
             "projectName": "Team12_6cfe457f",
-            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/Team12/SunDevilPizza\" --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

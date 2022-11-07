@@ -1,7 +1,8 @@
-package SunDevilPizza;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 import javafx.fxml.Initializable;
 
 import javafx.event.ActionEvent;
@@ -20,7 +21,7 @@ public class FirstSceneController implements Initializable, ControlledScreen {
     
     @FXML
     void goToEmployeeLogin(ActionEvent event) {
-       myController.setScreen(ScreensFramework.employeeLoginID);
+       //myController.setScreen(ScreensFramework.employeeLoginID);
     }
 
 
