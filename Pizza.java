@@ -88,7 +88,8 @@ public class Pizza {
 	public String toString() {
 		
 		return String.format("%s\s%s\s%s",
-				pizzaType, topping1 + "\s" + topping2 + "\s" + topping3 + "\s" + topping4,
+				pizzaType, pizzaTopping[0] + "\s" + pizzaTopping[1] + 
+				"\s" + pizzaTopping[2] + "\s" + pizzaTopping[3],
 				pickupTime.toString());
 	}
 }
