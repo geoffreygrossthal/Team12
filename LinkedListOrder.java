@@ -1,8 +1,9 @@
 package CSE360_SunDevilPizza;
 
 public class LinkedListOrder {
-
-		//private int size;
+		
+		private int[] idList;
+		private int size;
 		private NodeOrder headList;
 		
 		public LinkedListOrder() {
@@ -69,25 +70,25 @@ public class LinkedListOrder {
 			prev.next = temp.next;
 			
 		}
+		
+		public int[] getIdList()
+       		 {
+           		 if (size == 0)
+               		 return null;
+            
+            		 idList = new int[size];
+           		 int index = 0;
+            
+           		 for(NodeOrder current = headList; current != null; current = current.next)
+            		 {
+                		idList[index] = current.data.getOrderID();
+                		index++;
+            		 }
 
-		
-			/*for(NodeOrder i = headList; i != null; i = i.next) {
-				
-				NodeOrder willDel = i.next;
-				
-				if(willDel.data.equals(deleteOrder)) {
-					
-					i.next = willDel.next;
-					willDel = null;
-				}
-			}
-			*/
-		
-		
-		//public String toString() {
-			
-			
-		//}
+            		return idList;
+        	}
+
+	
 		
 		public String toString() {
 			
@@ -97,7 +98,5 @@ public class LinkedListOrder {
 				ans = ans + i.data.toString();
 			}
 			return ans;
-			}
 		}
-		
-
+	}
