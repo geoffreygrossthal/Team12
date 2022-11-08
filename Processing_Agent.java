@@ -89,23 +89,23 @@ class Processing_Agent
 		return list.findOrder(id).getCustomer().getID();
 	}
 
-
-
 	public void addOrder (Order order)
 	{
 		list.insertOrder (new NodeOrder(order));
 	}
-	
 
-	public int checkOrderStatus (Order order)
+	// No parameters needed. The whole file will be rewrite
+	public void saveAcptOrder()
 	{
-		return order.getStatus();
-	}
-
-
-	public void saveAcptOrder(Order order)
-	{
-
+		try {
+			myWriter = new FileWriter("PizzaOrder.txt");
+			myWriter.write(list.toString());
+			myWriter.close();
+			
+		} catch (IOException e){
+			e.printStackTrace();
+		}
+		
 	}
 
 	public boolean verifyOrder (Order order)
