@@ -49,6 +49,11 @@ public class Order {
 		
 	}
 	
+	public boolean equals(Order order)
+	{
+		return (order.getOrderID() == orderID);	
+	}
+	
 	public String toString(){
 		/*
 		 * The New Order file contains information in this order:
