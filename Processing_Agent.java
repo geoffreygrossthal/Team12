@@ -6,27 +6,27 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-class Processing_Agent
+class Processing_Agent extends Employee
 {
 	private Scanner infile;
 	private File file;
-	private LinkList list;
 
-	public Processing_Agent (LinkList list)
+	public Processing_Agent (String name, int id, LinkedListOrder list)
 	{
-		this.list = list;
+		super(name, id, list);
 	}
 
 	// this constructor automatically read all data from NewOrder.txt
-	public Processing_Agent()
+	public Processing_Agent(String name, int id)
 	{
-		list = new LinkList();
+		super(name, id);
+
 		String pizzaType, pickUpTime, email;
 		String topping[] = new String[4];
 		int asuID, orderID, orderStatus;
 
 		try {
-			file = new File("NewOrder.txt");
+			file = new File("PizzaOrders.txt");
 			infile = new Scanner(file);
 
 			while (infile.hasNextLine())
@@ -40,12 +40,7 @@ class Processing_Agent
 				asuID = infile.nextInt();
 				email = infile.next();
 
-
-				Pizza pizza = new Pizza(pizzaType, topping, new Time(pickUpTime));
-				ASU_Student customer = new ASU_Student(asuID, email);
-				Order order = new Order(orderID, customer, orderStatus, pizza);
-				list.insertOrder(new NodeOrder (order));
-
+				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, email);
 			}
 
 		} catch (FileNotFoundException e) {
@@ -54,97 +49,14 @@ class Processing_Agent
 
 	}
 
-	public int[] getIdList()
+	public boolean verifyOrder(int orderID)
 	{
-		return list.getIdList();
-	}
-
-	public int getOrderStatus(int id)
-	{
-		return list.findOrder(id).getStatus();
-	}
-
-	public String[] getTopping(int id)
-	{
-		return list.findOrder(id).getPizza().getPizzaTopping();
-	}
-
-	public String getPickupTime(int id)
-	{
-		return list.findOrder(id).getPizza().getPickupTime();
-	}
-
-	public String getPizzaType(int id)
-	{
-		return list.findOrder(id).getPizza().getPizzaType();
-	}
-
-	public String getEmail(int id)
-	{
-		return list.findOrder(id).getCustomer().getEmail();
-	}
-
-	public int getStudentID(int id)
-	{
-		return list.findOrder(id).getCustomer().getID();
-	}
-
-	public void addOrder (Order order)
-	{
-		list.insertOrder (new NodeOrder(order));
-	}
-
-	// No parameters needed. The whole file will be rewrite
-	public void saveAcptOrder()
-	{
-		try {
-			myWriter = new FileWriter("PizzaOrder.txt");
-			myWriter.write(list.toString());
-			myWriter.close();
-			
-		} catch (IOException e){
-			e.printStackTrace();
-		}
-		
-	}
-
-	public boolean verifyOrder (Order order)
-	{
-		int id = order.getCustomer().getID();
-		if (verifyID(id))
+		int asuID = super.getStudentID(orderID);
+		if (ASU_Student.verifyASUID(asuID))
 		{
 			list.findOrder(id).setStatus(1);
 			return true;
 		}
-		return false;
-	}
-
-	private boolean verifyID (int asuID)
-	{
-		// check from ASUID.txt
-		try {
-			file = new File("ASUID.txt");
-			infile = new Scanner(file);
-
-			int id;
-			while (infile.hasNext())
-			{
-				id = infile.nextInt();
-				if (id == asuID)
-					return true;
-			}
-
-			return false;
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
-
-	private boolean employeeLogin()
-	{
-
 		return false;
 	}
 }
