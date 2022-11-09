@@ -19,7 +19,7 @@ public class Pizza {
 	
 	private String pizzaType;
 	private String[] pizzaTopping = new String[4];
-	private Time pickupTime;
+	private String pickupTime;
 	private double pizzaPrice;
 	
 
@@ -30,8 +30,7 @@ public class Pizza {
 		pizzaTopping = topping;
 		pickupTime = time;
 		
-		
-		
+		calculatePrice();
 	}
 	
 	public String getPizzaType() {
@@ -44,7 +43,7 @@ public class Pizza {
 		return pizzaTopping;
 	}
 	
-	public Time getPickupTime() {
+	public String getPickupTime() {
 		
 		return pickupTime;
 	}
@@ -56,18 +55,18 @@ public class Pizza {
 	
 
 	
-	public double calculatePrice() {
+	private void calculatePrice() {
 		
-		double totalPrice = 0;
+		pizzaPrice = 0;
 	
 		if(pizzaType.equals(type1))
-			totalPrice = priceType1;
+			pizzaPrice = priceType1;
 		
 		else if(pizzaType.equals(type2))
-			totalPrice = priceType2;
+			pizzaPrice = priceType2;
 		
 		else if(pizzaType.equals(type3))
-			totalPrice = priceType3;
+			pizzaPrice = priceType3;
 		
 		for( int i = 0; i < 4; ++i) {
 			
@@ -76,13 +75,9 @@ public class Pizza {
 					pizzaTopping[i].equals(topping3) ||
 					pizzaTopping[i].equals(topping4)))
 	
-				totalPrice += toppingPrice;
+				pizzaPrice += toppingPrice;
 						 							
 		}
-		
-		
-		return totalPrice;
-		
 	}
 	
 	public String toString() {
@@ -90,6 +85,6 @@ public class Pizza {
 		return String.format("%s\s%s\s%s",
 				pizzaType, pizzaTopping[0] + "\s" + pizzaTopping[1] + 
 				"\s" + pizzaTopping[2] + "\s" + pizzaTopping[3],
-				pickupTime.toString());
+				pickupTime);
 	}
 }
