@@ -1,0 +1,12 @@
+.root {
+  -fx-background-color: #141414;
+}
+
+#buttonBackground {
+  -fx-display: flex;
+  -fx-background-color: #F6E71D;
+}
+
+#anchorPaneBackground {
+  -fx-background-color: #141414
+}

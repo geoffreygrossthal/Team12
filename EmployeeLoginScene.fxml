@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+   <children>
+      <Label layoutX="255.0" layoutY="215.0" text="Employee Login" textFill="#fdfdfd" />
+      <Button fx:id="buttonBackground" layoutX="230.0" layoutY="293.0" mnemonicParsing="false" onAction="#switchToSelectPizzaScene" prefHeight="40.0" prefWidth="140.0" text="Login">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <PasswordField layoutX="230.0" layoutY="255.0" prefHeight="25.0" prefWidth="140.0" promptText="Employee ID" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asuLogo.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

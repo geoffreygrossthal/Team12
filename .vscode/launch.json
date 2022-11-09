@@ -12,9 +12,9 @@
         },
         {
             "type": "java",
-            "name": "Launch PizzaSelection",
+            "name": "Launch MainMethod",
             "request": "launch",
-            "mainClass": "PizzaSelection",
+            "mainClass": "MainMethod",
             "projectName": "Team12_6cfe457f",
             "vmArgs": "--module-path \"C:/Users/geoff/OneDrive/Desktop/javafx-sdk-18.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
         }
