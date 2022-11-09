@@ -51,7 +51,7 @@ public class Order {
 	
 	public boolean equals(Order order)
 	{
-		return (order.getOrderID() == orderID);	
+		return (order.getOrderID() == orderId);	
 	}
 	
 	public String toString(){
