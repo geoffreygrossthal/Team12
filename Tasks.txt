@@ -1,0 +1,53 @@
+LoginScene.fxml
+
+        A login scene that prompt 2 button: ASU Student, or Employee. If Employee is selected, then prompt login text box for employees (Chef and Cashier) to enter their name and employee ID. If ASU Student is selected, bring student to StatusScene.fxml
+
+StatusScene.fxml
+
+       Login Prompt (text box) will ask for ASU_ID. If a current order is exist 
+
+OrderScene.fxml
+
+       An order page for ASU student to place their order. When “submit” button is clicked, prompt out total amount and payment method (a text box for student to enter their ASU_ID). 
+
+ProcessingScene.fxml
+
+     A Processing scene for Processor to view all orders. 
+
+ChefScene.fxml
+
+    A Scene for Chef to view all orders. Chef update order status by clicking “Update” button on each order. 
+
+
+
+On all scene except LoginScene.fxml should have “HOME” button to directly return back to LoginScene.fxml
+
+
+List of back end functions for LoginScene:
+	static Employee.verifyEmployee(<String name>, <int id>): boolean
+	static ASU_Student.verifyASUid(<int asuID>): boolean
+	
+List of back end functions for OrderScene: 
+	getPizzaPrice():		double		from Order.java class
+	static WriteToFile.addNewOrder(String order): void
+
+List of back end functions for ProcessingScene: from Processing_Agent class, this class inherit Employee class
+	getIdList(): 			int[]
+	getOrderStatus(int id): 	int
+	getTopping(int id): 		String[]
+	getPizzaType(int id): 		String
+	getEmail(int id): 		String
+	getStudentID(int id): 		int
+	getPickupTime(int id): 		String
+	getPizzaPrice():		double
+	updateStatus(int id, int status): void
+	verifyOrder(int id): 		boolean
+	verifyASUid(int asuID): 	boolean
+	addOrder(int orderID, int orderStatus, String pizzaType, String[] topping, String pickUpTime, int asuID, String email): void
+
+List of back end functions for ChefScene: From Chef_Agent class, this class inherit Employee class
+	getIdList(): 			int[]
+	getOrderStatus(int id): 	int
+	getTopping(int id): 		String[]
+	getPizzaType(int id): 		String
+	getPickupTime(int id): 		String
