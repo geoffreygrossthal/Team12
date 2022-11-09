@@ -21,7 +21,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <PasswordField layoutX="220.0" layoutY="247.0" prefWidth="140.0" promptText="Enter ASURITE ID" />
+      <PasswordField fx:id="asuriteID" layoutX="220.0" layoutY="247.0" prefWidth="140.0" promptText="Enter ASURITE ID" />
       <Button fx:id="buttonBackground" layoutX="220.0" layoutY="286.0" mnemonicParsing="false" onAction="#switchToOrderStatusScene" prefHeight="40.0" prefWidth="140.0" text="Submit">
          <font>
             <Font size="18.0" />

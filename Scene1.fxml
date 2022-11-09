@@ -19,12 +19,12 @@
             <Image url="@asuLogo.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="buttonBackground" layoutX="200.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToEmployeeLoginScene" prefHeight="40.0" prefWidth="193.0" text="Login (Processor)">
+      <Button fx:id="buttonBackground" layoutX="200.0" layoutY="295.0" mnemonicParsing="false" onAction="#switchToEmployeeLoginProcessorScene" prefHeight="40.0" prefWidth="193.0" text="Login (Processor)">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="buttonBackground" layoutX="200.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToEmployeeChefLoginScene" prefHeight="40.0" prefWidth="193.0" text="Login (Chef)">
+      <Button fx:id="buttonBackground" layoutX="200.0" layoutY="345.0" mnemonicParsing="false" onAction="#switchToEmployeeLoginChefScene" prefHeight="40.0" prefWidth="193.0" text="Login (Chef)">
          <font>
             <Font size="18.0" />
          </font>
