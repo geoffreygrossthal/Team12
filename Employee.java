@@ -16,7 +16,7 @@ abstract class Employee
 
 	// File manipulate class
 	private Scanner infile;
-	private File file;
+	private static File file;
 	private FileWriter ofile;
 	
 	// general information created

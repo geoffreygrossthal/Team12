@@ -1,4 +1,4 @@
-package CSE360_SunDevilPizza;
+
 
 public class Pizza {
 	
@@ -24,7 +24,7 @@ public class Pizza {
 	
 
 	
-	public Pizza(String type, String[] topping, Time time) {
+	public Pizza(String type, String[] topping, String time) {
 		
 		pizzaType = type;
 		pizzaTopping = topping;
@@ -48,7 +48,7 @@ public class Pizza {
 		return pickupTime;
 	}
 	
-	public double getPizzaprice() {
+	public double getPizzaPrice() {
 		
 		return pizzaPrice;
 	}
