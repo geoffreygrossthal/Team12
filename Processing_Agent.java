@@ -51,12 +51,12 @@ class Processing_Agent extends Employee
 
 	public boolean verifyOrder(int orderID)
 	{
-		int asuID = super.getStudentID(orderID);
+		/*int asuID = super.getStudentID(orderID);
 		if (ASU_Student.verifyASUID(asuID))
 		{
 			list.findOrder(id).setStatus(1);
 			return true;
-		}
+		}*/
 		return false;
 	}
 }

@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 //
 //
 //
@@ -6,7 +10,7 @@
 class Chef_Agent
 {
 	private Scanner infile;
-	private File file;
+	private static File file;
 
 	public Chef_Agent(String name, int id, LinkedListOrder list)
 	{
