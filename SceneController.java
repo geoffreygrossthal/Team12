@@ -18,8 +18,8 @@ public class SceneController {
 
     @FXML
     private TextField employeeIDChef;
-    /*@FXML
-    private TextField employeeIDProcesor;*/
+    @FXML
+    private TextField employeeIDProcessor;
     @FXML
     private TextField asuriteID;
  
@@ -58,6 +58,19 @@ public class SceneController {
         Stage mainWindow = (Stage) employeeIDChef.getScene().getWindow();
         String passwordChef = employeeIDChef.getText();
         Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        /*String css = this.getClass().getResource("styles.css").toExternalForm();
+        scene.getStylesheets().add(css);*/
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    public void switchToProcessorScene(ActionEvent event) throws IOException {
+        Stage mainWindow = (Stage) employeeIDProcessor.getScene().getWindow();
+        String passwordProcessor = employeeIDProcessor.getText();
+        Parent root = FXMLLoader.load(getClass().getResource("ProcessorScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         /*String css = this.getClass().getResource("styles.css").toExternalForm();
