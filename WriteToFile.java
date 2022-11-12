@@ -4,17 +4,9 @@ import java.util.Scanner;
 
 class WriteToFile
 {
-	// File manipulate class
-	//private Scanner infile;
-	//private File file;
-	//private FileWriter ofile;
-
-	// array of String
-	//private String orders;
-
 	public static void addNewOrder(String order)
 	{
-		// read all data in file, then add new order
+		// read all data in file, then add new order at the end of the file
 		try {
 			File file = new File("PizzaOrders.txt");
 			Scanner infile = new Scanner(file);
