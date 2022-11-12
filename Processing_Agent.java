@@ -48,6 +48,10 @@ class Processing_Agent extends Employee
 		}
 
 	}
+	public int getStudentID(int id)
+	{
+		return list.findOrder(id).getCustomer().getID();
+	}
 
 	public boolean verifyOrder(int orderID)
 	{
