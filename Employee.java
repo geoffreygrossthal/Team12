@@ -12,7 +12,7 @@ abstract class Employee
 	// General information of an Employee
 	private String name;
 	private int id;
-	private LinkedListOrder list;
+	protected LinkedListOrder list;
 
 	// File manipulate class
 	private static Scanner infile;
