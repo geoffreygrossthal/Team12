@@ -89,8 +89,8 @@ public class SceneController {
     private ChoiceBox<String> minute;
 
     private String[] minutes = {"00", "15", "30", "45"};
-    private String[] hours = {"9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", 
-                                "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"};
+    private String[] hours = {Time.localTimeString0, Time.localTimeString1, Time.localTimeString2, Time.localTimeString3, Time.localTimeString4, Time.localTimeString5, Time.localTimeString6, Time.localTimeString7, 
+        Time.localTimeString8, Time.localTimeString9, Time.localTimeString10, Time.localTimeString11, Time.localTimeString12, Time.localTimeString13, Time.localTimeString14};
     boolean pressed = true;
 
     @FXML
