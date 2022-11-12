@@ -1,5 +1,3 @@
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -8,7 +6,6 @@ public class ASU_Student {
 
 	private int student_ID;
 	private String student_email;
-	private boolean verifyID;
 	
 	public ASU_Student(int id, String email) {
 		
@@ -28,41 +25,34 @@ public class ASU_Student {
 		return student_email;
 	}
 	
-	public boolean VerifyId() {
-		
-		return verifyID;
-	}
-	
-	public void setStudentID(String id){
-		//verify student ID 
-		//the file should contains all of the student ID
-		
-		
+	public static boolean verifyASUID (int asuID)
+	{
+		// check from ASUID.txt
 		try {
-			
-			File file = new File("filename.txt");
-			
-			Scanner sc = new Scanner(file);
-			
-			while(sc.hasNextLine()) {
-				
-				id = sc.nextLine();
-				
+			File file = new File("ASUID.txt");
+			try (Scanner infile = new Scanner(file)) {
+				int id;
+				while (infile.hasNext())
+				{
+					id = infile.nextInt();
+					if (id == asuID){
+						return true;
+					}
+				}
 			}
-			
-			sc.close();
-			
+
+			return false;
+
 		} catch (FileNotFoundException e) {
-			
 			e.printStackTrace();
-		}	
-		
+		}
+		return false;
 	}
 
 
 	public String toString() {
 		
-		return String.format("%s\s%s", student_ID, student_email);
+		return String.format("%s\\s%s", student_ID, student_email);
 	}
 
 }

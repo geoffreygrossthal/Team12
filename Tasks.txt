@@ -18,9 +18,8 @@ ChefScene.fxml
 
     A Scene for Chef to view all orders. Chef update order status by clicking “Update” button on each order. 
 
-
-
-On all scene except LoginScene.fxml should have “HOME” button to directly return back to LoginScene.fxml
+the PizzaOrders.txt will have data in this format:
+	orderID orderStatus pizzaType, topping1, topping2, topping3, topping4, pickUpTime, asuID, email
 
 
 List of back end functions for LoginScene:

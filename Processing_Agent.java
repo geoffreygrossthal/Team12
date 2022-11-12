@@ -48,15 +48,42 @@ class Processing_Agent extends Employee
 		}
 
 	}
+	public int getStudentID(int id)
+	{
+		return list.findOrder(id).getCustomer().getID();
+	}
+	
+	public static boolean verifyASUID (int asuID)
+	{
+		// check from ASUID.txt
+		try {
+			File file = new File("ASUID.txt");
+			try (Scanner infile = new Scanner(file)) {
+				int id;
+				while (infile.hasNext())
+				{
+					id = infile.nextInt();
+					if (id == asuID){
+						return true;
+					}
+				}
+			}
 
+			return false;
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 	public boolean verifyOrder(int orderID)
 	{
-		/*int asuID = super.getStudentID(orderID);
+		int asuID = getStudentID(orderID);
 		if (ASU_Student.verifyASUID(asuID))
 		{
-			list.findOrder(id).setStatus(1);
+			list.findOrder(orderID).setStatus(1);
 			return true;
-		}*/
+		}
 		return false;
 	}
 }
