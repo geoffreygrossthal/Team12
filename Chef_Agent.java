@@ -7,10 +7,10 @@ import java.util.Scanner;
 //
 //
 //
-class Chef_Agent
+class Chef_Agent extends Employee
 {
 	private Scanner infile;
-	private static File file;
+	private File file;
 
 	public Chef_Agent(String name, int id, LinkedListOrder list)
 	{
