@@ -36,6 +36,10 @@ public class Order {
 		
 		return pizza;
 	}
+
+	public double getPizzaPrice() {
+		return this.pizza.getPizzaPrice();
+	}
 	
 	public void setStatus(int status) {
 		
