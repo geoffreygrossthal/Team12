@@ -15,7 +15,7 @@ abstract class Employee
 	private LinkedListOrder list;
 
 	// File manipulate class
-	private Scanner infile;
+	private static Scanner infile;
 	private static File file;
 	private FileWriter ofile;
 	
@@ -125,9 +125,9 @@ abstract class Employee
 	public void addOrder (int orderID, int orderStatus, String pizzaType, String[] topping,
 			String pickUpTime, int asuID, String email)
 	{
-		Pizza pizza = new Pizza(pizzaType, topping, new Time(pickUpTime));
+		Pizza pizza = new Pizza(pizzaType, topping, pickUpTime);
 		ASU_Student customer = new ASU_Student(asuID, email);
-		Order order = new Order(orderID, customer, orderStatus, pizza);
+		Order order = new Order(orderID, customer, pizza);
 		list.insertOrder(new NodeOrder(order));
 	}
 
