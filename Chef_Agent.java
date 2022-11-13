@@ -26,10 +26,10 @@ class Chef_Agent extends Employee
 		int asuID, orderID, orderStatus;
 
 		try {
-			file = new File("Orders.txt");
+			file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
 			infile = new Scanner(file);
 
-			while (infile.hasNextLine())
+			while (infile.hasNext())
 			{
 				orderID = infile.nextInt();
 				orderStatus = infile.nextInt();
@@ -38,9 +38,8 @@ class Chef_Agent extends Employee
 					topping[i] = infile.next();
 				pickUpTime = infile.next();
 				asuID = infile.nextInt();
-				email = infile.next();
 
-				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, email);
+				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, "");
 			}
 
 		} catch (FileNotFoundException e) {
