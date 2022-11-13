@@ -9,7 +9,7 @@ public class LinkedListOrder {
 		public LinkedListOrder() {
 			
 			headList = null;
-			
+			size = 0;
 		}
 		
 		
@@ -42,6 +42,7 @@ public class LinkedListOrder {
 			
 			newOrder.next = headList;
 			headList = newOrder;
+			size++;
 		}
 		
 		
@@ -72,20 +73,19 @@ public class LinkedListOrder {
 		}
 		
 		public int[] getIdList()
-       		 {
-           		 if (size == 0)
-               		 return null;
+       		{
+           		if (size == 0)
+               		return null;
             
-            		 idList = new int[size];
-           		 int index = 0;
+            	idList = new int[size];
+           		int index = 0;
             
-           		 for(NodeOrder current = headList; current != null; current = current.next)
-            		 {
+           		for(NodeOrder current = headList; current != null; current = current.next)
+            		{
                 		idList[index] = current.data.getOrderID();
                 		index++;
-            		 }
-
-            		return idList;
+            		}
+            	return idList;
         	}
 
 	
@@ -95,7 +95,7 @@ public class LinkedListOrder {
 			String ans = "";
 			for (NodeOrder i = headList; i != null; i = i.next) {
 				
-				ans = ans + i.data.toString();
+				ans = ans + i.data.toString() + "\n";
 			}
 			return ans;
 		}
