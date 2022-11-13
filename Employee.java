@@ -84,20 +84,18 @@ abstract class Employee
 		return list.findOrder(id).getPizza().getPizzaPrice();
 	}
 
-	public static boolean verifyEmployeeID(String ename, int eID)
+	public static boolean verifyEmployeeID(String eID)
 	{
 		// check from Employee.txt
 		try {
 			file = new File("Employee.txt");
 			infile = new Scanner(file);
 
-			int id;
-			String name;
+			String id;
 			while (infile.hasNext())
 			{
-				id = infile.nextInt();
-				name = infile.next();
-				if (id == eID && ename.equals(name))
+				id = infile.next();
+				if (eID.equals(id)))
 					return true;
 			}
 
