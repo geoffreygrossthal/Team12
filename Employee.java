@@ -12,7 +12,7 @@ abstract class Employee
 	// General information of an Employee
 	private String name;
 	private int id;
-	protected LinkedListOrder list;
+	private LinkedListOrder list;
 
 	// File manipulate class
 	private static Scanner infile;
@@ -84,9 +84,12 @@ abstract class Employee
 		return list.findOrder(id).getPizza().getPizzaPrice();
 	}
 
-	
-	/* 
-	public static boolean verifyEmployeeID(String ename, int eID)
+	public String getOrderString(int id)
+	{
+		return list.findOrder(id).toString();
+	}
+
+	public static boolean verifyEmployeeID(String eID)
 	{
 		// check from Employee.txt
 		try {
@@ -97,7 +100,7 @@ abstract class Employee
 			while (infile.hasNext())
 			{
 				id = infile.next();
-				if (eID.equals(id)))
+				if (eID.equals(id))
 					return true;
 			}
 
@@ -107,36 +110,13 @@ abstract class Employee
 			e.printStackTrace();
 		}
 		return false;
-	}*/
-
-	public static boolean verifyEmployeeID(String eID)
-    {
-        // check from Employee.txt
-        try {
-            file = new File("Employee.txt");
-            infile = new Scanner(file);
-
-            String id;
-            while (infile.hasNext())
-            {
-                id = infile.next();
-                if (eID.equals(id))
-                    return true;
-            }
-
-            return false;
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
+	}
 
 	// No parameters needed. The whole file will be rewrite
 	public void saveOrders()
 	{
 		try {
-			ofile = new FileWriter("PizzaOrders.txt");
+			ofile = new FileWriter("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
 			ofile.write(list.toString());
 			ofile.close();
 			
@@ -150,7 +130,7 @@ abstract class Employee
 	{
 		Pizza pizza = new Pizza(pizzaType, topping, pickUpTime);
 		ASU_Student customer = new ASU_Student(asuID, email);
-		Order order = new Order(orderID, customer, pizza);
+		Order order = new Order(orderID, orderStatus, customer, pizza);
 		list.insertOrder(new NodeOrder(order));
 	}
 
