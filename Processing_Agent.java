@@ -29,7 +29,7 @@ class Processing_Agent extends Employee
 			file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
 			infile = new Scanner(file);
 
-			while (infile.hasNextLine())
+			while (infile.hasNext())
 			{
 				orderID = infile.nextInt();
 				orderStatus = infile.nextInt();
@@ -42,7 +42,7 @@ class Processing_Agent extends Employee
 				System.out.println(orderID + orderStatus + 
 					pizzaType + topping[0] + pickUpTime + asuID);
 
-				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, "@dvien");
+				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, "");
 			}
 
 		} catch (FileNotFoundException e) {

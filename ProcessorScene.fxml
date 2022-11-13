@@ -37,11 +37,6 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="notReadyOrder" layoutX="354.0" layoutY="246.0" text="Label" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
       <Button layoutX="354.0" layoutY="347.0" mnemonicParsing="false" onAction="#refreshProcessor" text="Reload" />
    </children>
 </AnchorPane>
