@@ -100,7 +100,7 @@ public class SceneController {
                                 "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
     boolean pressed = true;
 
-    String pizzaType, pickUpTime, hr, mi;
+    String pizzaType, hr, mi;
     String topping[] = new String[4];
 
     @FXML
@@ -161,10 +161,12 @@ public class SceneController {
         //Intialize Order
     } 
 
+    @FXML
     public void getHour(ActionEvent event) {
         hr = hour.getValue();
     }
 
+    @FXML
     public void getMinute(ActionEvent event) {
         mi = minute.getValue();
     }
@@ -193,7 +195,8 @@ public class SceneController {
          //Validate Password
         if (ASU_Student.verifyASUID(passwordStudent))
         {
-            String order = "1111" + "0" + pizzaType + topping[0] + topping[1] + topping[2] + topping[3] + pickUpTime + passwordStudent;
+            String order = "1111 " + "0 " + pizzaType + " " + topping[0] + " " + topping[1] + " " + topping[2] + " " + topping[3] 
+                    + " " + hr + mi + " " + passwordStudent;
 
             WriteToFile.addNewOrder(order);
             barFloat = 33;
