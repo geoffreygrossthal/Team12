@@ -40,12 +40,12 @@
       </RadioButton>
       <RadioButton fx:id="pizzaType2" layoutX="152.0" layoutY="197.0" mnemonicParsing="false" onAction="#getPizzaType" text="Vegetable" textFill="WHITE">
          <toggleGroup>
-            <ToggleGroup fx:id="pizza1" />
+            <ToggleGroup fx:id="pizza" />
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="pizzaType3" layoutX="152.0" layoutY="221.0" mnemonicParsing="false" onAction="#getPizzaType" text="Pepperoni" textFill="WHITE">
          <toggleGroup>
-            <ToggleGroup fx:id="pizza2" />
+            <ToggleGroup fx:id="pizza" />
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="topping1" layoutX="368.0" layoutY="173.0" mnemonicParsing="false" onAction="#getTopping" text="Mushroom" textFill="WHITE" />
