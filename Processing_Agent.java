@@ -26,7 +26,7 @@ class Processing_Agent extends Employee
 		int asuID, orderID, orderStatus;
 
 		try {
-			file = new File("PizzaOrders.txt");
+			file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
 			infile = new Scanner(file);
 
 			while (infile.hasNextLine())
@@ -38,9 +38,11 @@ class Processing_Agent extends Employee
 					topping[i] = infile.next();
 				pickUpTime = infile.next();
 				asuID = infile.nextInt();
-				email = infile.next();
 
-				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, email);
+				System.out.println(orderID + orderStatus + 
+					pizzaType + topping[0] + pickUpTime + asuID);
+
+				super.addOrder(orderID, orderStatus, pizzaType, topping, pickUpTime, asuID, "@dvien");
 			}
 
 		} catch (FileNotFoundException e) {
@@ -48,40 +50,13 @@ class Processing_Agent extends Employee
 		}
 
 	}
-	public int getStudentID(int id)
-	{
-		return list.findOrder(id).getCustomer().getID();
-	}
-	
-	public static boolean verifyASUID (int asuID)
-	{
-		// check from ASUID.txt
-		try {
-			File file = new File("ASUID.txt");
-			try (Scanner infile = new Scanner(file)) {
-				int id;
-				while (infile.hasNext())
-				{
-					id = infile.nextInt();
-					if (id == asuID){
-						return true;
-					}
-				}
-			}
 
-			return false;
-
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		return false;
-	}
 	public boolean verifyOrder(int orderID)
 	{
-		int asuID = getStudentID(orderID);
+		int asuID = super.getASUID(orderID);
 		if (ASU_Student.verifyASUID(asuID))
 		{
-			list.findOrder(orderID).setStatus(1);
+			super.updateStatus(orderID, 1);
 			return true;
 		}
 		return false;
