@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
@@ -28,7 +27,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttonBackground" layoutX="354.0" layoutY="291.0" mnemonicParsing="false" onAction="#switchToSelectPizzaScene" prefHeight="40.0" prefWidth="140.0" text="Process">
+      <Button fx:id="buttonBackground" layoutX="354.0" layoutY="291.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Process">
          <font>
             <Font size="18.0" />
          </font>

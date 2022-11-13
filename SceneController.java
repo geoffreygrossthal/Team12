@@ -25,13 +25,8 @@ public class SceneController {
     private Scene scene;
     private Parent root;
 
-    @FXML
-    private TextField employeeIDChef;
-    @FXML
-    private TextField employeeIDProcessor;
-    @FXML
-    private TextField asuriteID;
 
+    
     public void switchToSelectPizzaScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("SelectPizzaScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -56,8 +51,13 @@ public class SceneController {
         stage.show();
     }
 
+
+
+    @FXML
+    private TextField employeeIDChef;
     @FXML
     public void switchToChefScene(ActionEvent event) throws IOException {
+        String passwordChef = employeeIDProcessor.getText();
         Stage mainWindow = (Stage) employeeIDChef.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -66,6 +66,10 @@ public class SceneController {
         stage.show();
     }
 
+
+
+    @FXML
+    private TextField employeeIDProcessor;
     @FXML
     public void switchToProcessorScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) employeeIDProcessor.getScene().getWindow();
@@ -76,6 +80,8 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
+
 
     @FXML
     private RadioButton pizzaType1, pizzaType2, pizzaType3;
@@ -89,8 +95,8 @@ public class SceneController {
     private ChoiceBox<String> minute;
 
     private String[] minutes = {"00", "15", "30", "45"};
-    private String[] hours = {Time.localTimeString0, Time.localTimeString1, Time.localTimeString2, Time.localTimeString3, Time.localTimeString4, Time.localTimeString5, Time.localTimeString6, Time.localTimeString7, 
-        Time.localTimeString8, Time.localTimeString9, Time.localTimeString10, Time.localTimeString11, Time.localTimeString12, Time.localTimeString13, Time.localTimeString14};
+    private String[] hours = {"9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", 
+                                "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"};
     boolean pressed = true;
 
     @FXML
@@ -113,10 +119,17 @@ public class SceneController {
         else if (pizzaType3.isSelected()) {
             pizzaChoice.setText(pizzaType3.getText());
         }
+        
     } 
 
+    @FXML 
+    private Label total;
     @FXML
     public void getTopping(ActionEvent event) {
+
+        //Calculate price total
+        String temp = "11.46";
+        total.setText(temp);
 
         if (pressed) {
             minute.getItems().addAll(minutes);
@@ -138,6 +151,7 @@ public class SceneController {
         if (topping4.isSelected()) {
             String top4 = topping4.getText();
         }
+        //Intialize Order
     } 
 
     public void getHour(ActionEvent event) {
@@ -147,7 +161,8 @@ public class SceneController {
     public void getMinute(ActionEvent event) {
         String myMinute = minute.getValue();
     }
-    
+
+    @FXML
     public void switchToCheckOutScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("CheckOutScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -156,15 +171,15 @@ public class SceneController {
         stage.show();
     }
 
-    @FXML 
-    private Label total;
 
+
+    @FXML
+    private TextField asuriteID;
     @FXML
     public void switchToOrderStatusScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) asuriteID.getScene().getWindow();
         String passwordStudent = asuriteID.getText();
-        String temp = "11.46";
-        total.setText(temp);
+        //Validate Password
         Parent root = FXMLLoader.load(getClass().getResource("OrderStatusScene.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

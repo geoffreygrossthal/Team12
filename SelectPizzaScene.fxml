@@ -57,5 +57,7 @@
       <ChoiceBox fx:id="hour" layoutX="230.0" layoutY="280.0" prefHeight="25.0" prefWidth="50.0" />
       <ChoiceBox fx:id="minute" layoutX="305.0" layoutY="280.0" prefHeight="25.0" prefWidth="66.0" />
       <Label fx:id="pizzaChoice" layoutX="152.0" layoutY="249.0" prefHeight="17.0" prefWidth="74.0" text="Label" textFill="WHITE" />
+      <Label layoutX="280.0" layoutY="212.0" text="Total" textFill="WHITE" />
+      <Label fx:id="total" layoutX="281.0" layoutY="229.0" prefHeight="17.0" prefWidth="48.0" text="Label" textFill="WHITE" />
    </children>
 </AnchorPane>
