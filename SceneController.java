@@ -134,10 +134,6 @@ public class SceneController {
     @FXML
     public void getTopping(ActionEvent event) {
 
-        //Calculate price total
-        String temp = "11.46";
-        total.setText(temp);
-
         if (pressed) {
             minute.getItems().addAll(minutes);
             minute.setOnAction(this::getMinute);
@@ -149,15 +145,26 @@ public class SceneController {
         if (topping1.isSelected()) {
             topping[0] = topping1.getText();
         }
+        else 
+            topping[0] = null;
+
         if (topping2.isSelected()) {
             topping[1] = topping2.getText();
         }
+        else
+            topping[1] = null;
+
         if (topping3.isSelected()) {
             topping[2] = topping3.getText();
         }
+        else
+            topping[2] = null;
+
         if (topping4.isSelected()) {
             topping[3] = topping4.getText();
         }
+        else
+            topping[3] = null;
         //Intialize Order
     } 
 
@@ -172,20 +179,16 @@ public class SceneController {
     }
 
     @FXML
-    public void switchToCheckOutScene(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("CheckOutScene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+    public void calculatePrice(ActionEvent event)
+    {
+        Pizza myPizza = new Pizza(pizzaType, topping, hr+mi);
+        total.setText(String.format("%.2f", myPizza.getPizzaPrice()));
     }
-
-
 
     @FXML
     private TextField asuriteID;
     @FXML
-    private Label invalid;
+    private Label noticeText;
     private float barFloat;
     @FXML
     public void switchToOrderStatusScene(ActionEvent event) throws IOException {
@@ -208,7 +211,7 @@ public class SceneController {
             stage.show();
         }
         else{
-            invalid.setText("Invalid password");
+            noticeText.setText("Invalid password");
         }
         
     }
