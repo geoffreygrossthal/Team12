@@ -8,29 +8,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="741.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="260.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="248.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@asuLogo.jpg" />
          </image>
       </ImageView>
-      <ChoiceBox layoutX="109.0" layoutY="247.0" prefHeight="25.0" prefWidth="139.0" />
-      <ChoiceBox layoutX="354.0" layoutY="247.0" prefHeight="25.0" prefWidth="139.0" />
-      <Label layoutX="109.0" layoutY="208.0" stylesheets="@styles.css" text="Orders" textFill="WHITE">
+      <ChoiceBox fx:id="orderIDready" layoutX="32.0" layoutY="196.0" prefHeight="25.0" prefWidth="139.0" />
+      <ChoiceBox fx:id="orderIDnotready" layoutX="355.0" layoutY="196.0" prefHeight="25.0" prefWidth="139.0" />
+      <Label layoutX="32.0" layoutY="164.0" stylesheets="@styles.css" text="Orders" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="208.0" stylesheets="@styles.css" text="Orders (Unprocessed)" textFill="WHITE">
+      <Label layoutX="354.0" layoutY="164.0" stylesheets="@styles.css" text="Orders (Unprocessed)" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttonBackground" layoutX="354.0" layoutY="291.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Process">
+      <Button fx:id="buttonBackground" layoutX="354.0" layoutY="291.0" mnemonicParsing="false" onAction="#processOrder" prefHeight="40.0" prefWidth="140.0" text="Process">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
+      <Label fx:id="readyOrder" layoutX="32.0" layoutY="246.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="notReadyOrder" layoutX="354.0" layoutY="246.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="354.0" layoutY="347.0" mnemonicParsing="false" onAction="#refreshProcessor" text="Reload" />
    </children>
 </AnchorPane>
