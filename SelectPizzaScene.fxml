@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+<AnchorPane fx:id="anchorPaneBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
    <children>
       <Button fx:id="buttonBackground" layoutX="230.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToCheckOutScene" prefHeight="40.0" prefWidth="140.0" text="Submit Order">
          <font>
@@ -33,21 +33,13 @@
          </font>
       </Label>
       <Label fx:id="noticeText" layoutX="265.0" layoutY="368.0" text="Thank You!" textFill="WHITE" />
-      <RadioButton fx:id="pizzaType1" layoutX="152.0" layoutY="173.0" mnemonicParsing="false" onAction="#getPizzaType" text="Cheese" textFill="WHITE">
+      <RadioButton fx:id="pizzaType1" layoutX="152.0" layoutY="173.0" mnemonicParsing="false" onAction="#getPizzaType" selected="true" text="Cheese" textFill="WHITE">
          <toggleGroup>
             <ToggleGroup fx:id="pizza" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="pizzaType2" layoutX="152.0" layoutY="197.0" mnemonicParsing="false" onAction="#getPizzaType" text="Vegetable" textFill="WHITE">
-         <toggleGroup>
-            <ToggleGroup fx:id="pizza" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="pizzaType3" layoutX="152.0" layoutY="221.0" mnemonicParsing="false" onAction="#getPizzaType" text="Pepperoni" textFill="WHITE">
-         <toggleGroup>
-            <ToggleGroup fx:id="pizza" />
-         </toggleGroup>
-      </RadioButton>
+      <RadioButton fx:id="pizzaType2" layoutX="152.0" layoutY="197.0" mnemonicParsing="false" onAction="#getPizzaType" text="Vegetable" textFill="WHITE" toggleGroup="$pizza" />
+      <RadioButton fx:id="pizzaType3" layoutX="152.0" layoutY="221.0" mnemonicParsing="false" onAction="#getPizzaType" text="Pepperoni" textFill="WHITE" toggleGroup="$pizza" />
       <RadioButton fx:id="topping1" layoutX="368.0" layoutY="173.0" mnemonicParsing="false" onAction="#getTopping" text="Mushroom" textFill="WHITE" />
       <RadioButton fx:id="topping2" layoutX="368.0" layoutY="197.0" mnemonicParsing="false" onAction="#getTopping" text="Onion" textFill="WHITE" />
       <RadioButton fx:id="topping3" layoutX="368.0" layoutY="221.0" mnemonicParsing="false" onAction="#getTopping" text="Olives" textFill="WHITE" />
@@ -57,7 +49,5 @@
       <ChoiceBox fx:id="hour" layoutX="230.0" layoutY="280.0" prefHeight="25.0" prefWidth="50.0" />
       <ChoiceBox fx:id="minute" layoutX="305.0" layoutY="280.0" prefHeight="25.0" prefWidth="66.0" />
       <Label fx:id="pizzaChoice" layoutX="152.0" layoutY="249.0" prefHeight="17.0" prefWidth="74.0" text="Label" textFill="WHITE" />
-      <Label layoutX="280.0" layoutY="212.0" text="Total" textFill="WHITE" />
-      <Label fx:id="total" layoutX="281.0" layoutY="229.0" prefHeight="17.0" prefWidth="48.0" text="Label" textFill="WHITE" />
    </children>
 </AnchorPane>
