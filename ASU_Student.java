@@ -25,7 +25,7 @@ public class ASU_Student {
 		return student_email;
 	}
 	
-	public static boolean verifyASUID (int asuID)
+	public static boolean verifyASUID (String asuID)
 	{
 		// check from ASUID.txt
 		try {
