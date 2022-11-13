@@ -1,12 +1,11 @@
 
-
 public class Pizza {
 	
 	private static final String type1 = "Cheese";
-	private static final String type2 = "Veggie";
+	private static final String type2 = "Vegetable";
 	private static final String type3 = "Pepperoni";
 	
-	private static final String topping1 = "Olive";
+	private static final String topping1 = "Olives";
 	private static final String topping2 = "Mushroom";
 	private static final String topping3 = "Onion";
 	private static final String topping4 = "ExtraCheese";
