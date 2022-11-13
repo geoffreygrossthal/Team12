@@ -1,5 +1,4 @@
 
-
 public class Order {
 	
 	private int orderId;
@@ -8,11 +7,11 @@ public class Order {
 	private Pizza pizza;
 	
 	
-	public Order(int orderId, ASU_Student customer,Pizza pizza) {
+	public Order(int orderId, int orderStatus, ASU_Student customer,Pizza pizza) {
 		
 		this.orderId = orderId;
 		this.customer = customer;
-		//this.orderStatus = orderStatus;
+		this.orderStatus = orderStatus;
 		this.pizza = pizza;
 		
 	}
@@ -35,10 +34,6 @@ public class Order {
 	public Pizza getPizza() {
 		
 		return pizza;
-	}
-
-	public double getPizzaPrice() {
-		return this.pizza.getPizzaPrice();
 	}
 	
 	public void setStatus(int status) {
