@@ -83,6 +83,52 @@ public class SceneController {
     }
 
 
+    private Processing_Agent processorAgent;
+    private Chef_Agent chefAgent;
+    private int[] idlist;
+    private String[] idStrings;
+    private String orderID;
+
+    @FXML
+    public void processOrder(ActionEvent event) throws IOException
+    {
+        int id = Integer.parseInt(orderID);
+        if(processorAgent != null)
+        {
+            if (processorAgent.getOrderStatus(id)==0)
+            {
+                processorAgent.updateStatus(id, 1);
+                processorAgent.saveOrders();
+            }
+        }
+    }
+
+    @FXML
+    private ChoiceBox<String> orderIDready;
+    @FXML
+    private ChoiceBox<String> orderIDnotReady;
+    @FXML
+    public void refreshProcessor(ActionEvent event) throws IOException
+    {
+        processorAgent = new Processing_Agent("vien", 123);
+        idlist = processorAgent.getIdList();
+        idStrings = new String[idlist.length];
+
+        for (int i = 0; i < idlist.length; ++i)
+        {
+            idStrings[i] = String.format("%d", idlist[i]);
+        }
+
+        orderIDready.getItems().addAll(idStrings);
+        orderIDready.setOnAction(this::getID);
+    }
+
+    public void getID(ActionEvent event)
+    {
+        orderID = orderIDready.getValue();
+    }
+
+
 
     @FXML
     private RadioButton pizzaType1, pizzaType2, pizzaType3;
