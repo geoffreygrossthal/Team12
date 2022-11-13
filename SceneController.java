@@ -1,4 +1,3 @@
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -12,8 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -59,19 +60,11 @@ public class SceneController {
     public void switchToChefScene(ActionEvent event) throws IOException {
         String passwordChef = employeeIDProcessor.getText();
         Stage mainWindow = (Stage) employeeIDChef.getScene().getWindow();
-        //Validate password
-        boolean valid = Employee.verifyEmployeeID(passwordChef);
-    
-        if (valid) {
-            Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
-        else {
-            //Out put label invalid ID
-        }
+        Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -82,17 +75,11 @@ public class SceneController {
     public void switchToProcessorScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) employeeIDProcessor.getScene().getWindow();
         String passwordProcessor = employeeIDProcessor.getText();
-        boolean valid = Employee.verifyEmployeeID(passwordProcessor);
-        if (valid) {
-            Parent root = FXMLLoader.load(getClass().getResource("ProcessorScene.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }
-        else {
-            //Label wrong password
-        }
+        Parent root = FXMLLoader.load(getClass().getResource("ProcessorScene.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -109,9 +96,12 @@ public class SceneController {
     private ChoiceBox<String> minute;
 
     private String[] minutes = {"00", "15", "30", "45"};
-    private String[] hours = {"9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", 
-                                "5 PM", "6 PM", "7 PM", "8 PM", "9 PM", "10 PM", "11 PM"};
+    private String[] hours = {"9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", 
+                                "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
     boolean pressed = true;
+
+    String pizzaType, pickUpTime, hr, mi;
+    String topping[] = new String[4];
 
     @FXML
     public void getPizzaType(ActionEvent event) {
@@ -126,12 +116,15 @@ public class SceneController {
 
         if (pizzaType1.isSelected()) {
             pizzaChoice.setText(pizzaType1.getText());
+            pizzaType = pizzaType1.getText();
         }
         else if (pizzaType2.isSelected()) {
             pizzaChoice.setText(pizzaType2.getText());
+            pizzaType = pizzaType2.getText();
         }
         else if (pizzaType3.isSelected()) {
             pizzaChoice.setText(pizzaType3.getText());
+            pizzaType = pizzaType3.getText();
         }
         
     } 
@@ -141,7 +134,7 @@ public class SceneController {
     @FXML
     public void getTopping(ActionEvent event) {
 
-        //Calculate price total and set to temp
+        //Calculate price total
         String temp = "11.46";
         total.setText(temp);
 
@@ -154,26 +147,26 @@ public class SceneController {
         }
 
         if (topping1.isSelected()) {
-            String top1 = topping1.getText();
+            topping[0] = topping1.getText();
         }
         if (topping2.isSelected()) {
-            String top2 = topping2.getText();
+            topping[1] = topping2.getText();
         }
         if (topping3.isSelected()) {
-            String top3 = topping3.getText();
+            topping[2] = topping3.getText();
         }
         if (topping4.isSelected()) {
-            String top4 = topping4.getText();
+            topping[3] = topping4.getText();
         }
         //Intialize Order
     } 
 
     public void getHour(ActionEvent event) {
-        String myHour = hour.getValue();
+        hr = hour.getValue();
     }
 
     public void getMinute(ActionEvent event) {
-        String myMinute = minute.getValue();
+        mi = minute.getValue();
     }
 
     @FXML
@@ -190,14 +183,38 @@ public class SceneController {
     @FXML
     private TextField asuriteID;
     @FXML
+    private Label invalid;
+    private float barFloat;
+    @FXML
     public void switchToOrderStatusScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) asuriteID.getScene().getWindow();
         String passwordStudent = asuriteID.getText();
-        //Validate Password
-        Parent root = FXMLLoader.load(getClass().getResource("OrderStatusScene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+         //Validate Password
+        if (ASU_Student.verifyASUID(passwordStudent))
+        {
+            String order = "1111" + "0" + pizzaType + topping[0] + topping[1] + topping[2] + topping[3] + pickUpTime + passwordStudent;
+
+            WriteToFile.addNewOrder(order);
+            barFloat = 33;
+
+            Parent root = FXMLLoader.load(getClass().getResource("OrderStatusScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else{
+            invalid.setText("Invalid password");
+        }
+        
+    }
+
+    @FXML 
+    private ProgressBar bar;
+    @FXML
+    public void refreshProgress(ActionEvent event) throws IOException
+    {
+        bar.setProgress(barFloat);
     }
 }
