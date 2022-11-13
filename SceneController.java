@@ -141,7 +141,7 @@ public class SceneController {
     @FXML
     public void getTopping(ActionEvent event) {
 
-        //Calculate price total
+        //Calculate price total and set to temp
         String temp = "11.46";
         total.setText(temp);
 
