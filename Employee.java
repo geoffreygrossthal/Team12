@@ -84,6 +84,7 @@ abstract class Employee
 		return list.findOrder(id).getPizza().getPizzaPrice();
 	}
 
+	/* 
 	public static boolean verifyEmployeeID(String ename, int eID)
 	{
 		// check from Employee.txt
@@ -107,7 +108,30 @@ abstract class Employee
 			e.printStackTrace();
 		}
 		return false;
-	}
+	}*/
+
+	public static boolean verifyEmployeeID(String eID)
+    {
+        // check from Employee.txt
+        try {
+            file = new File("Employee.txt");
+            infile = new Scanner(file);
+
+            String id;
+            while (infile.hasNext())
+            {
+                id = infile.next();
+                if (eID.equals(id))
+                    return true;
+            }
+
+            return false;
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 	// No parameters needed. The whole file will be rewrite
 	public void saveOrders()

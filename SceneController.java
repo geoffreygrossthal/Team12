@@ -59,11 +59,19 @@ public class SceneController {
     public void switchToChefScene(ActionEvent event) throws IOException {
         String passwordChef = employeeIDProcessor.getText();
         Stage mainWindow = (Stage) employeeIDChef.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        //Validate password
+        boolean valid = Employee.verifyEmployeeID(passwordChef);
+    
+        if (valid) {
+            Parent root = FXMLLoader.load(getClass().getResource("ChefScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else {
+            //Out put label invalid ID
+        }
     }
 
 
@@ -74,11 +82,17 @@ public class SceneController {
     public void switchToProcessorScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) employeeIDProcessor.getScene().getWindow();
         String passwordProcessor = employeeIDProcessor.getText();
-        Parent root = FXMLLoader.load(getClass().getResource("ProcessorScene.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        boolean valid = Employee.verifyEmployeeID(passwordProcessor);
+        if (valid) {
+            Parent root = FXMLLoader.load(getClass().getResource("ProcessorScene.fxml"));
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else {
+            //Label wrong password
+        }
     }
 
 
