@@ -25,19 +25,19 @@ public class ASU_Student {
 		return student_email;
 	}
 	
-	public static boolean verifyASUID (String asuID)
+	public static boolean verifyASUID (int asuID)
 	{
 		// check from ASUID.txt
 		try {
-			File file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/ASUID.txt");
+			File file = new File("C:/Users/Dave/Documents/csc360/Team12-main/ASUID.txt");
 			try (Scanner infile = new Scanner(file)) {
-				String id;
+				int id;
 				while (infile.hasNext())
 				{
-					id = infile.next();
+					id = infile.nextInt();
 					System.out.println(asuID);
 					System.out.println(id);
-					if (id.equals(asuID)){
+					if (id == asuID){
 						return true;
 					}
 				}

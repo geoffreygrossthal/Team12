@@ -7,7 +7,7 @@ class WriteToFile
 	{
 		// read all data in file, then add new order at the end of the file
 		try {
-			File file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
+			File file = new File("C:/Users/Dave/Documents/csc360/Team12-main/PizzaOrders.txt");
 			Scanner infile = new Scanner(file);
 			String orders = "";
 			String temp;
@@ -20,7 +20,7 @@ class WriteToFile
 			}
 			orders = orders+order;
 			infile.close();
-			FileWriter ofile = new FileWriter("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
+			FileWriter ofile = new FileWriter("C:/Users/Dave/Documents/csc360/Team12-main/PizzaOrders.txt");
 			ofile.write(orders);
 			ofile.close();
 
@@ -34,7 +34,7 @@ class WriteToFile
 	{
 		int newID = 0;
         try {
-			File file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/OrdersID.txt");
+			File file = new File("C:/Users/Dave/Documents/csc360/Team12-main/OrdersID.txt");
 			try (Scanner infile = new Scanner(file)) {
 				while (infile.hasNext())
 				{
@@ -55,7 +55,7 @@ class WriteToFile
 	{
 		// read all data in file, then add new order at the end of the file
 		try {
-			File file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/OrdersID.txt");
+			File file = new File("C:/Users/Dave/Documents/csc360/Team12-main/OrdersID.txt");
 			Scanner infile = new Scanner(file);
 			String orders = "";
 			String temp;
@@ -67,7 +67,7 @@ class WriteToFile
 			}
 			orders = orders + id;
 			infile.close();
-			FileWriter ofile = new FileWriter("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/OrdersID.txt");
+			FileWriter ofile = new FileWriter("C:/Users/Dave/Documents/csc360/Team12-main/OrdersID.txt");
 			ofile.write(orders);
 			ofile.close();
 

@@ -93,7 +93,7 @@ abstract class Employee
 	{
 		// check from Employee.txt
 		try {
-			file = new File("Employee.txt");
+			file = new File("C:/Users/Dave/Documents/csc360/Team12-main/EmployeeID.txt");
 			infile = new Scanner(file);
 
 			String id;
@@ -116,7 +116,7 @@ abstract class Employee
 	public void saveOrders()
 	{
 		try {
-			ofile = new FileWriter("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
+			ofile = new FileWriter("C:/Users/Dave/Documents/csc360/Team12-main/PizzaOrders.txt");
 			ofile.write(list.toString());
 			ofile.close();
 			

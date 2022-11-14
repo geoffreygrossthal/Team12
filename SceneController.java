@@ -286,7 +286,7 @@ public class SceneController {
     @FXML
     public void switchToOrderStatusScene(ActionEvent event) throws IOException {
         Stage mainWindow = (Stage) asuriteID.getScene().getWindow();
-        String passwordStudent = asuriteID.getText();
+        int passwordStudent = Integer.valueOf(asuriteID.getText());
 
          //Validate Password
         if (ASU_Student.verifyASUID(passwordStudent))

@@ -21,12 +21,12 @@ class Processing_Agent extends Employee
 	{
 		super(name, id);
 
-		String pizzaType, pickUpTime, email;
+		String pizzaType, pickUpTime;
 		String topping[] = new String[4];
 		int asuID, orderID, orderStatus;
 
 		try {
-			file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/PizzaOrders.txt");
+			file = new File("C:/Users/Dave/Documents/csc360/Team12-main/PizzaOrders.txt");
 			infile = new Scanner(file);
 
 			while (infile.hasNext())
