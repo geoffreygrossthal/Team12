@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
+<AnchorPane fx:id="anchorPaneBackground" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
    <children>
-      <Button fx:id="buttonBackground" layoutX="231.0" layoutY="452.0" mnemonicParsing="false" onAction="#switchToOrderStatusScene" prefHeight="40.0" prefWidth="140.0" text="Submit Order">
+      <Button fx:id="buttonBackground" layoutX="230.0" layoutY="409.0" mnemonicParsing="false" onAction="#switchToOrderStatusScene" prefHeight="40.0" prefWidth="140.0" text="Submit Order">
          <font>
             <Font size="18.0" />
          </font>
@@ -33,7 +33,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="noticeText" layoutX="270.0" layoutY="415.0" text="Thank You!" textFill="WHITE" />
+      <Label fx:id="noticeText" layoutX="271.0" layoutY="459.0" text="Thank You!" textFill="WHITE" />
       <RadioButton fx:id="pizzaType1" layoutX="152.0" layoutY="173.0" mnemonicParsing="false" onAction="#getPizzaType" selected="true" text="Cheese" textFill="WHITE">
          <toggleGroup>
             <ToggleGroup fx:id="pizza" />
@@ -47,15 +47,20 @@
       <RadioButton fx:id="topping4" layoutX="368.0" layoutY="245.0" mnemonicParsing="false" onAction="#getTopping" text="ExtraCheese" textFill="WHITE" />
       <Label layoutX="255.0" layoutY="128.0" text="Sun Devil Pizza" textFill="WHITE" />
       <Label layoutX="263.0" layoutY="315.0" text="Pickup Time" textFill="WHITE" />
-      <ChoiceBox fx:id="hour" layoutX="230.0" layoutY="339.0" prefHeight="25.0" prefWidth="50.0" />
-      <ChoiceBox fx:id="minute" layoutX="297.0" layoutY="339.0" prefHeight="25.0" prefWidth="66.0" />
-      <Label fx:id="pizzaChoice" layoutX="152.0" layoutY="249.0" prefHeight="17.0" prefWidth="74.0" text="Label" textFill="WHITE" />
+      <ChoiceBox fx:id="hour" layoutX="230.0" layoutY="339.0" prefHeight="25.0" prefWidth="59.0" />
+      <ChoiceBox fx:id="minute" layoutX="297.0" layoutY="339.0" prefHeight="25.0" prefWidth="74.0" />
+      <Label fx:id="pizzaChoice" layoutX="152.0" layoutY="249.0" prefHeight="17.0" prefWidth="74.0" text="Pizza" textFill="WHITE" />
       <Label fx:id="total" layoutX="334.0" layoutY="273.0" text="0" textFill="#ffffffed">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button layoutX="229.0" layoutY="279.0" mnemonicParsing="false" onAction="#calculatePrice" text="Calculate" />
-      <TextField fx:id="asuriteID" layoutX="226.0" layoutY="376.0" promptText="Enter ASU ID" />
+      <Button fx:id="buttonBackground" layoutX="230.0" layoutY="278.0" mnemonicParsing="false" onAction="#calculatePrice" text="Calculate" />
+      <TextField fx:id="asuriteID" layoutX="230.0" layoutY="376.0" prefHeight="25.0" prefWidth="140.0" promptText="Enter ASU ID" />
+      <Label layoutX="310.0" layoutY="273.0" text="\$" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

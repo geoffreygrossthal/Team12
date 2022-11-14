@@ -9,7 +9,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SceneController">
    <children>
-      <Label layoutX="260.0" layoutY="215.0" stylesheets="@styles.css" text="SunDevil Pizza" textFill="WHITE" />
+      <Label layoutX="260.0" layoutY="215.0" stylesheets="@styles.css" text="Sun Devil Pizza" textFill="WHITE" />
       <Button fx:id="buttonBackground" layoutX="200.0" layoutY="245.0" mnemonicParsing="false" onAction="#switchToSelectPizzaScene" prefHeight="40.0" prefWidth="193.0" text="Order Pizza (Student)">
          <font>
             <Font size="18.0" />
