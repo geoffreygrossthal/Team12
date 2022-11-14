@@ -29,13 +29,15 @@ public class ASU_Student {
 	{
 		// check from ASUID.txt
 		try {
-			File file = new File("ASUID.txt");
+			File file = new File("C:/Users/levie/Documents/Java_file/ASU_Pizza_Order/src/ASUID.txt");
 			try (Scanner infile = new Scanner(file)) {
-				int id;
+				String id;
 				while (infile.hasNext())
 				{
-					id = infile.nextInt();
-					if (id == asuID){
+					id = infile.next();
+					System.out.println(asuID);
+					System.out.println(id);
+					if (id.equals(asuID)){
 						return true;
 					}
 				}
@@ -52,7 +54,7 @@ public class ASU_Student {
 
 	public String toString() {
 		
-		return String.format("%s\\s%s", student_ID, student_email);
+		return String.format("%s\s%s", student_ID, student_email);
 	}
 
 }
